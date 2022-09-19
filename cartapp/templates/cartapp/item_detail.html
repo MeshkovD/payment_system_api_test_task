@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>{{ item.name }}</title>
+</head>
+<body>
+<ul>
+    <li>{{ item.name }}</li>
+    <li>{{ item.description }}</li>
+    <li>{{ item.price }}</li>
+</ul>
+<form action="{% url 'buy' item.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Buy</button>
+</form>
+
+</body>
+</html>
